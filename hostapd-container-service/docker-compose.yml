@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  hostapd:
+    build: .
+    image: ${DOCKERHUB_USERNAME}/hostapd-container:main-multi-arch
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN

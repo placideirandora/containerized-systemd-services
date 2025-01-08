@@ -1,0 +1,10 @@
+# Dockerfile.base
+ARG DOCKERHUB_USERNAME
+FROM alpine:latest
+
+RUN apk add --no-cache \
+    hostapd \
+    wireless-tools \
+    iw
+
+WORKDIR /etc
