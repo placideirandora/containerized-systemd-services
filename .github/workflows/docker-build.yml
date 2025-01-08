@@ -44,6 +44,6 @@ jobs:
           file: ./hostapd-container-service/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/hostapd-container:main-multi-arch
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/hostapd-container-service:main-multi-arch
           build-args: |
             DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
