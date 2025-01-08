@@ -1,0 +1,18 @@
+ARG DOCKERHUB_USERNAME
+FROM ubuntu:22.04
+
+# Install FreeRADIUS and required packages
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    freeradius \
+    freeradius-utils \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create freerad user and group if they don't exist
+RUN getent group freerad || groupadd -r freerad && \
+    getent passwd freerad || useradd -r -g freerad freerad
+
+# Set permissions
+RUN mkdir -p /etc/freeradius/3.0 && \
+    chown -R freerad:freerad /etc/freeradius

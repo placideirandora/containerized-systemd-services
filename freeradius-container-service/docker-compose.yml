@@ -1,0 +1,6 @@
+version: "3.8"
+
+services:
+  freeradius:
+    image: ${DOCKERHUB_USERNAME}/freeradius-container:main-multi-arch
+    network_mode: "host"
