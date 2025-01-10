@@ -1,0 +1,7 @@
+version: "3.8"
+
+services:
+  super-web-app:
+    build: .
+    image: rupeshsaini09/shiriki-webapp-frontend
+    network_mode: "host"

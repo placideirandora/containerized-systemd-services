@@ -1,0 +1,111 @@
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0E294B;
+    height: 100vh;
+}
+.circle-container {
+    position: relative;
+    height: 60vh;
+}
+.orbit {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.gradient-button {
+    background: linear-gradient(to right, #0066FF, #00CCFF);
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Increase size */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
+}
+
+.orbit-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    animation: spin 10s linear infinite; /* Continuous spin */
+}
+
+.orbit-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: pulse 1s ease-in-out forwards; /* Pulse once */
+    transition: transform 0.3s ease-in-out;
+}
+
+.orbit-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.orbit-icon:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.orbit-icon:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.orbit-icon:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.orbit-icon:nth-child(5) {
+    animation-delay: 0.8s;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Slightly larger */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s ease-in-out infinite; /* Infinite pulse effect */
+}
+@keyframes spinAndPulse {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2); /* Pulse larger */
+    }
+    100% {
+        transform: rotate(360deg) scale(1); /* Pulse back to normal */
+    }
+}
+
+.orbit-icon {
+    animation: spinAndPulse 4s ease-in-out infinite;
+}
+

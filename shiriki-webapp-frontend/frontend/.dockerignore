@@ -1,0 +1,17 @@
+# Ignore node_modules (will be installed fresh in the container)
+node_modules
+
+# Ignore local development environment files
+.env
+*.env
+
+# Ignore Git repository files
+.git
+.gitignore
+
+# Ignore Docker-related files
+Dockerfile
+docker-compose.yml
+
+# Ignore other unnecessary files
+README.md
